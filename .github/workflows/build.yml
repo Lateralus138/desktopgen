@@ -1,0 +1,59 @@
+name: Build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+# on:
+#   push:
+#     paths:
+#       - '**.cpp'
+#       - '**.h'
+#       - '**.o'
+#       - '**.sln'
+#       - 'makefile'
+
+jobs:
+  build_linux:
+    name: Build Project
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Make
+      run: |
+        if [[ -d "release" ]]; then
+          rm -rf release
+        fi
+        ./scripts/build.sh
+        desktopgen_linux_md5_text='{\n\t"schemaVersion": 1,\n\t"color": "2E9778",\n\t"label": "desktopgen MD5",\n\t"message": "PLACEHOLDER",\n\t"labelColor": "1d1d1d",\n\t"style": "for-the-badge",\n\t"namedLogo": "linux"\n}'
+        if ! [[ -d "./docs/json" ]]; then
+          mkdir -p ./docs/json
+        fi
+        if ! [[ -f "./docs/json/desktopgen_linux_md5.json" ]]; then
+          touch ./docs/json/desktopgen_linux_md5.json
+        fi
+        echo -e "$desktopgen_linux_md5_text" > ./docs/json/desktopgen_linux_md5.json
+        sed -i "s/\"message\": \".*\"/\"message\": \"$(md5sum ./release/linux/dynamic/desktopgen | cut -d' ' -f 1)\"/g" docs/json/desktopgen_linux_md5.json
+        desktopgen_debian_md5_text='{\n\t"schemaVersion": 1,\n\t"color": "2E9778",\n\t"label": "desktopgen.deb MD5",\n\t"message": "PLACEHOLDER",\n\t"labelColor": "1d1d1d",\n\t"style": "for-the-badge",\n\t"namedLogo": "debian"\n}'
+        if ! [[ -d "docs/json" ]]; then
+          mkdir -p docs/json
+        fi
+        if ! [[ -f "docs/json/desktopgen_debian_md5.json" ]]; then
+          touch docs/json/desktopgen_debian_md5.json
+        fi
+        echo -e "$desktopgen_debian_md5_text" > ./docs/json/desktopgen_debian_md5.json
+        sed -i "s/\"message\": \".*\"/\"message\": \"$(md5sum release/debian/desktopgen.deb | cut -d' ' -f 1)\"/g" docs/json/desktopgen_debian_md5.json
+        git add .
+        git config --global user.name 'Lateralus138'
+        git config --global user.email 'Lateralus138@users.noreply.github.com'
+        git commit -am "Pushed new project files to master. - $(date)"
+        git push
+    - uses: ncipollo/release-action@v1
+      with:
+        allowUpdates: True
+        tag: 1.0.0
+        name: Stable Release
+        prerelease: False
+        artifacts: "./release/debian/desktopgen.deb,./release/linux/dynamic/desktopgen"
+        token: ${{ secrets.GITHUB_TOKEN }}

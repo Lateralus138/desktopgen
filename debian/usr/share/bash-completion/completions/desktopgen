@@ -1,0 +1,17 @@
+desktopgen_list=(
+  -h --help
+  -p --path
+  -f --file
+  -m --monochrome
+  -q --quiet
+  -n --name
+  -g --generic
+  -c --comment
+  -e -exec
+  -T --terminal
+  -t --type
+  -i --icon
+  -C --categories
+)
+complete -W "$(printf '%s\n' "${desktopgen_list[@]}")" desktopgen
+

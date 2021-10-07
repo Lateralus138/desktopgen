@@ -1,0 +1,9 @@
+Package: desktopgen
+Version: 1.0.0
+Section: Utilities
+Priority: optional
+Architecture: amd64
+Essential: no
+Installed-Size: 212
+Maintainer: https://github.com/Lateralus138/desktopgen
+Description: Generate .desktop shortcut files from the command line.
