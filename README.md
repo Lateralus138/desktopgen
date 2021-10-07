@@ -1,6 +1,5 @@
 # DesktopGen
-
-![https://twitter.com/intent/user?screen_name=thefluxapex](https://img.shields.io/twitter/follow/thefluxapex?style=for-the-badge)
+[![https://twitter.com/intent/user?screen_name=thefluxapex](https://img.shields.io/twitter/follow/thefluxapex?style=for-the-badge)](https://twitter.com/intent/user?screen_name=thefluxapex)
 
 Generate Linux .desktop shortcut files from the command line.
 
