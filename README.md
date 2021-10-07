@@ -1,5 +1,5 @@
 # DesktopGen
-[![https://twitter.com/intent/user?screen_name=thefluxapex](https://img.shields.io/twitter/follow/thefluxapex?color=%236CADDE&logoColor=%23000000&style=for-the-badge&logo=twitter)](https://twitter.com/intent/user?screen_name=thefluxapex)
+[![https://twitter.com/intent/user?screen_name=thefluxapex](https://img.shields.io/twitter/follow/thefluxapex?color=%236CADDE&style=for-the-badge&logo=twitter)](https://twitter.com/intent/user?screen_name=thefluxapex)
 
 Generate Linux .desktop shortcut files from the command line.
 
@@ -143,6 +143,7 @@ This project is written in `C++`.
 
 |Description|Status|
 |:---:|:---:|
+|Build Status|![Build Status](https://img.shields.io/github/workflow/status/Lateralus138/desktopgen/Build?label=Binary%20%26%20Deb%20Build&logo=Linux&style=for-the-badge)|
 |CodeFactor Grade|![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/Lateralus138/desktopgen/master?style=for-the-badge)|
 |Project Release Date|![GitHub Release Date](https://img.shields.io/github/release-date/Lateralus138/desktopgen?style=for-the-badge)|
 |Total downloads for this project|![GitHub all releases](https://img.shields.io/github/downloads/Lateralus138/desktopgen/total?style=for-the-badge)|
