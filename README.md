@@ -1,5 +1,4 @@
 # DesktopGen
-[![https://twitter.com/intent/user?screen_name=thefluxapex](https://img.shields.io/twitter/follow/thefluxapex?color=%236CADDE&style=for-the-badge&logo=twitter)](https://twitter.com/intent/user?screen_name=thefluxapex)
 
 Generate Linux .desktop shortcut files from the command line.
 
@@ -19,6 +18,8 @@ Generate Linux .desktop shortcut files from the command line.
     - [File Information](#file-information)
     - [MD5](#md5)
   - [Media](#media)
+    - [Social](#social)
+    - [Images](#images)
 
 ---
 
@@ -183,6 +184,12 @@ Debian MD5
 ---
 
 ## Media
+
+### Social
+
+[![https://twitter.com/intent/user?screen_name=thefluxapex](https://img.shields.io/twitter/follow/thefluxapex?color=%236CADDE&style=for-the-badge&logo=twitter)](https://twitter.com/intent/user?screen_name=thefluxapex)
+
+### Images
 
 Logo
 
